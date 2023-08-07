@@ -24,14 +24,7 @@ export default function NavbarAlt(props) {
         { title: "Home Two Column", path: "/home/2-col" }
       ]
     },
-    {
-      label: "About",
-      href: "/about"
-    },
-    {
-      label: "Contact",
-      href: "/contact"
-    },
+
     {
       label: "Pages",
       href: "#",
