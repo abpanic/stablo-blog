@@ -13,16 +13,16 @@ import { myLoader } from "@/utils/all";
 export default function Navbar(props) {
   const leftmenu = [
     {
-      label: "Email Samples",
-      href: "/EmailSamples"
+      label: "SOP",
+      href: "/"
     },
     {
       label: "TSG",
       href: "/tsg"
     },
     {
-      label: "SOP",
-      href: "/sop"
+      label: "Email Samples",
+      href: "/Email"
     }
   ];
 
@@ -31,17 +31,13 @@ export default function Navbar(props) {
       label: "MisRoutes",
       href: "/misroutes"
     },
-    {
+    //{
      // label: "Menu label",
      // href: "",
      // external: true,
      // badge: "new"
-    },
-    {
-      label: "About",
-      href: "https://google.com",
-      external: true
-    }
+    //},
+
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
