@@ -50,28 +50,24 @@ export default function NavbarAlt(props) {
         },
         { title: "Archive - Pagination", path: "/archive" },
         {
-          title: "Single Post - Default",
-          path: "/post/10-simple-practices-that-will-help-you-get-1-better-every-day"
+          title: "Single TSG - Default",
+          path: "/tsg/10-simple-practices-that-will-help-you-get-1-better-every-day"
         },
         {
-          title: "Single Post - Minimal",
-          path: "/post/minimal/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration"
+          title: "Single TSG - Minimal",
+          path: "/tsg/minimal/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration"
         },
         {
-          title: "Single Post - Lifestyle",
-          path: "/post/lifestyle/there-s-nothing-new-about-undermining-women-s-autonomy"
+          title: "Single TSG - Lifestyle",
+          path: "/tsg/lifestyle/there-s-nothing-new-about-undermining-women-s-autonomy"
         },
         {
-          title: "Single Post - Sidebar",
-          path: "/post/sidebar/lessons-of-happiness-i-learned-from-a-mountain-village"
+          title: "Single TSG - Sidebar",
+          path: "/tsg/sidebar/lessons-of-happiness-i-learned-from-a-mountain-village"
         }
       ]
     },
-    {
-      label: "Purchase",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true
-    }
+    
   ];
 
   return (

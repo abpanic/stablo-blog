@@ -1,6 +1,6 @@
 import { apiVersion, dataset, projectId, useCdn } from "./config";
 import {
-  postquery,
+  tsgquery,
   limitquery,
   paginatedquery,
   configQuery,
@@ -8,8 +8,8 @@ import {
   pathquery,
   allauthorsquery,
   authorsquery,
-  postsbyauthorquery,
-  postsbycatquery,
+  tsgsbyauthorquery,
+  tsgsbycatquery,
   catpathquery,
   catquery,
   getAll,
@@ -45,9 +45,9 @@ export const fetcher = async ([query, params]) => {
   }
 })();
 
-export async function getAllPosts() {
+export async function getAllTSGs() {
   if (client) {
-    return (await client.fetch(postquery)) || [];
+    return (await client.fetch(tsgquery)) || [];
   }
   return [];
 }
@@ -59,14 +59,14 @@ export async function getSettings() {
   return [];
 }
 
-export async function getPostBySlug(slug) {
+export async function getTSGBySlug(slug) {
   if (client) {
     return (await client.fetch(singlequery, { slug })) || {};
   }
   return {};
 }
 
-export async function getAllPostsSlugs() {
+export async function getAllTSGsSlugs() {
   if (client) {
     const slugs = (await client.fetch(pathquery)) || [];
     return slugs.map(slug => ({ slug }));
@@ -82,9 +82,9 @@ export async function getAllAuthorsSlugs() {
   return [];
 }
 
-export async function getAuthorPostsBySlug(slug) {
+export async function getAuthorTSGsBySlug(slug) {
   if (client) {
-    return (await client.fetch(postsbyauthorquery, { slug })) || {};
+    return (await client.fetch(tsgsbyauthorquery, { slug })) || {};
   }
   return {};
 }
@@ -106,9 +106,9 @@ export async function getAllCategories() {
   return [];
 }
 
-export async function getPostsByCategory(slug) {
+export async function getTSGsByCategory(slug) {
   if (client) {
-    return (await client.fetch(postsbycatquery, { slug })) || {};
+    return (await client.fetch(tsgsbycatquery, { slug })) || {};
   }
   return {};
 }
@@ -120,7 +120,7 @@ export async function getTopCategories() {
   return [];
 }
 
-export async function getPaginatedPosts(limit) {
+export async function getPaginatedTSGs(limit) {
   if (client) {
     return (
       (await client.fetch(paginatedquery, {

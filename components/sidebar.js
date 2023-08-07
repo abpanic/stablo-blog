@@ -48,7 +48,7 @@ function RelatedPosts({ related, pathPrefix }) {
           return (
             <Link
               key={index}
-              href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
+              href={`/tsg/${pathPrefix ? `${pathPrefix}/` : ""}${
                 item.slug.current
               }`}>
               <div className="flex gap-5">

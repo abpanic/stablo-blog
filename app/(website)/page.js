@@ -1,9 +1,9 @@
 import HomePage from "./home";
-import { getAllPosts } from "@/lib/sanity/client";
+import { getAllTSGs } from "@/lib/sanity/client";
 
 export default async function IndexPage() {
-  const posts = await getAllPosts();
-  return <HomePage posts={posts} />;
+  const tsgs = await getAllTSGs();
+  return <HomePage tsgs={tsgs} />;
 }
 
 // export const revalidate = 60;

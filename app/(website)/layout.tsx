@@ -17,28 +17,11 @@ export async function sharedMetaData(params) {
     description:
       settings?.description ||
       "Stablo - popular open-source next.js and sanity blog template",
-    keywords: ["Next.js", "Sanity", "Tailwind CSS"],
     authors: [{ name: "Surjith" }],
     canonical: settings?.url,
-    openGraph: {
-      images: [
-        {
-          url:
-            urlForImage(settings?.openGraphImage)?.src ||
-            "/img/opengraph.jpg",
-          width: 800,
-          height: 600
-        }
-      ]
-    },
-    twitter: {
-      title: settings?.title || "Stablo Template",
-      card: "summary_large_image"
-    },
-    robots: {
-      index: true,
-      follow: true
-    }
+    
+    
+    
   };
 }
 

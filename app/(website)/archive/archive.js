@@ -3,7 +3,7 @@
 import Container from "@/components/container";
 import { useRouter, useSearchParams } from "next/navigation";
 import { paginatedquery } from "@/lib/sanity/groq";
-import PostList from "@/components/postlist";
+import TSGList from "@/components/tsglist";
 import useSWR, { SWRConfig } from "swr";
 import {
   ChevronLeftIcon,
@@ -12,7 +12,7 @@ import {
 import { useState, useEffect } from "react";
 import { fetcher } from "@/lib/sanity/client";
 
-export default function Post({ posts: initialposts }) {
+export default function TSG({ tsgs: initialtsgs }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const page = searchParams.get("page");
@@ -34,11 +34,11 @@ export default function Post({ posts: initialposts }) {
   //   client && client.fetch(query, params);
 
   const {
-    data: posts,
+    data: tsgs,
     error,
     isValidating
   } = useSWR([paginatedquery, paramsForQuery], fetcher, {
-    fallbackData: initialposts,
+    fallbackData: initialtsgs,
     onSuccess: () => {
       setIsLoading(false);
     }
@@ -49,8 +49,8 @@ export default function Post({ posts: initialposts }) {
   }, [pageIndex]);
 
   useEffect(() => {
-    setIsLastPage(posts.length < POSTS_PER_PAGE);
-  }, [posts]);
+    setIsLastPage(tsgs.length < POSTS_PER_PAGE);
+  }, [tsgs]);
 
   const handleNextPage = () => {
     router.push(`/archive?page=${pageIndex + 1}`);
@@ -68,10 +68,10 @@ export default function Post({ posts: initialposts }) {
         </h1>
         <div className="text-center">
           <p className="mt-2 text-lg">
-            See all posts we have ever written.
+            See all tsgs we have ever written.
           </p>
         </div>
-        {posts && posts?.length === 0 && (
+        {tsgs && tsgs?.length === 0 && (
           <div className="flex h-40 items-center justify-center">
             <span className="text-lg text-gray-500">
               End of the result!
@@ -88,10 +88,10 @@ export default function Post({ posts: initialposts }) {
             ))}
           </div>
         )}
-        {posts && !isLoading && !isValidating && (
+        {tsgs && !isLoading && !isValidating && (
           <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
-            {posts.map(post => (
-              <PostList key={post._id} post={post} aspect="square" />
+            {tsgs.map(tsg => (
+              <TSGList key={tsg._id} tsg={tsg} aspect="square" />
             ))}
           </div>
         )}
