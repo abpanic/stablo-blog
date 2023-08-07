@@ -13,33 +13,33 @@ import { myLoader } from "@/utils/all";
 export default function Navbar(props) {
   const leftmenu = [
     {
-      label: "Home",
-      href: "/"
+      label: "Email Samples",
+      href: "/EmailSamples"
     },
     {
-      label: "About",
-      href: "/about"
+      label: "TSG",
+      href: "/tsg"
     },
     {
-      label: "Contact",
-      href: "/contact"
+      label: "SOP",
+      href: "/sop"
     }
   ];
 
   const rightmenu = [
     {
-      label: "Archive",
-      href: "/archive"
+      label: "MisRoutes",
+      href: "/misroutes"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
+     // label: "Menu label",
+     // href: "",
+     // external: true,
+     // badge: "new"
     },
     {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+      label: "About",
+      href: "https://google.com",
       external: true
     }
   ];
